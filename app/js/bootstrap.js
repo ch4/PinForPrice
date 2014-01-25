@@ -2005,3 +2005,46 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
   })
 
 }(jQuery);
+
+
+
+
+function remove1() {
+    var elem = document.getElementById(11);
+    var elem2 = document.getElementById(12);
+    elem.parentNode.removeChild(elem);
+    elem2.parentNode.removeChild(elem2);
+    return false;
+}
+
+function remove2() {
+    var elem = document.getElementById(21);
+    var elem2 = document.getElementById(22);
+    elem.parentNode.removeChild(elem);
+    elem2.parentNode.removeChild(elem2);
+    return false;
+}
+
+function remove3() {
+    var elem = document.getElementById(31);
+    var elem2 = document.getElementById(32);
+    elem.parentNode.removeChild(elem);
+    elem2.parentNode.removeChild(elem2);
+    return false;
+}
+
+function remove4() {
+    var elem = document.getElementById(41);
+    var elem2 = document.getElementById(42);
+    elem.parentNode.removeChild(elem);
+    elem2.parentNode.removeChild(elem2);
+    return false;
+}
+
+function remove5() {
+    var elem = document.getElementById(51);
+    var elem2 = document.getElementById(52);
+    elem.parentNode.removeChild(elem);
+    elem2.parentNode.removeChild(elem2);
+    return false;
+}
