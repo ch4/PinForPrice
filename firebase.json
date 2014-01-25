@@ -1,5 +1,5 @@
 {
   "firebase": "pinforprice",
   "public": "app",
-  "rules": "config\\security-rules.json"
+  "rules": "config/security-rules.json"
 }
