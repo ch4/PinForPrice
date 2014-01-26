@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>One Column Portfolio Template for Bootstrap 3</title>
+    <title>Pin For Price</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -28,17 +28,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://startbootstrap.com">Start Bootstrap</a>
+                <a class="navbar-brand" href="http://pinforprice.firebaseapp.com">Home</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#about">About</a>
+                    <li><a href="about.html">About   <span class="glyphicon glyphicon-info-sign"></span></a>
                     </li>
-                    <li><a href="#services">Services</a>
+                    <li><a href="http://www.pinterest.com">   Pinterest</a>
                     </li>
-                    <li><a href="#contact">Contact</a>
+                    <li><a href="contact.html">Contact   <span class="glyphicon glyphicon-envelope"></span></a>
                     </li>
                 </ul>
             </div>
@@ -70,8 +70,11 @@
             <div class="col-lg-5 col-md-5">
                 <h3>Project One</h3>
                 <h4>Subheading</h4>
-                <a class="btn btn-primary" id = "11" >Over Priced</a>
-                <a class="btn btn-primary" id = "12" >Under Priced</a>
+                <div id="1" class="alert alert-success">
+              <strong>Thanks!</strong> Your opinion is greatly appreciated!
+            </div>
+                <a class="btn btn-primary" id = "11" >Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "12" >Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
@@ -89,8 +92,11 @@
             <div class="col-lg-5 col-md-5">
                 <h3>Project Two</h3>
                 <h4>Subheading</h4>
-                <a class="btn btn-primary" id = "21" onclick="remove2()">Over Priced <span class="glyphicon glyphicon-chevron-right"></span></a>
-                <a class="btn btn-primary" id = "22" onclick="remove2()">Under Priced<span class="glyphicon glyphicon-chevron-right"></span></a>
+                 <div id="2" class="alert alert-success">
+              <strong>Thanks!</strong> Your opinion is greatly appreciated!
+            </div>
+                <a class="btn btn-primary" id = "21">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "22">Under Priced<span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
@@ -104,12 +110,14 @@
                     <img class="img-responsive" src="http://placehold.it/700x300" alt="">
                 </a>
             </div>
-
             <div class="col-lg-5 col-md-5">
                 <h3>Project Three</h3>
                 <h4>Subheading</h4>
-                <a class="btn btn-primary" id = "31" onclick="remove3()">Over Priced<span class="glyphicon glyphicon-chevron-right"></span></a>
-                <a class="btn btn-primary" id = "32" onclick="remove3()">Under Priced<span class="glyphicon glyphicon-chevron-right"></span></a>
+                <div id="3" class="alert alert-success">
+              <strong>Thanks!</strong> Your opinion is greatly appreciated!
+            </div>
+                <a class="btn btn-primary" id = "31">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "32">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
@@ -127,12 +135,15 @@
             <div class="col-lg-5 col-md-5">
                 <h3>Project Four</h3>
                 <h4>Subheading</h4>
+                 <div id="4" class="alert alert-success">
+              <strong>Thanks!</strong> Your opinion is greatly appreciated!
+            </div>
                 <div class="alert alert-warning alert-dismissable">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               <strong>Warning!</strong> Best check yo self, you're not looking too good.
             </div>
-                <a class="btn btn-primary" id = "41" onclick="remove4()">Over Priced<span class="glyphicon glyphicon-chevron-right"></span></a>
-                <a class="btn btn-primary" id = "42" onclick="remove4()">Under Priced<span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" id = "41">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "42">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
@@ -150,8 +161,11 @@
             <div class="col-lg-5 col-md-5">
                 <h3>Project Five</h3>
                 <h4>Subheading</h4>
-                <a class="btn btn-primary" id = "51" onclick="remove5()">Over Priced<span class="glyphicon glyphicon-chevron-right"></span></a>
-                <a class="btn btn-primary" id = "52" onclick="remove5()">Under Priced<span class="glyphicon glyphicon-chevron-right"></span></a>
+                <div id="5" class="alert alert-success">
+              <strong>Thanks!</strong> Your opinion is greatly appreciated!
+            </div>
+                <a class="btn btn-primary" id = "51">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "52">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
@@ -161,7 +175,7 @@
         <div class="row text-center">
 
             <div class="col-lg-12">
-                <a class="load" href="#">Load More</a>
+                <a class="load" href="#" onclick="location.reload()">Load More</a>
             </div>
 
         </div>
@@ -188,84 +202,90 @@
    <script>
     $(document).ready(function(){
         $("#11").click(function(){
-    $("#11").fadeOut();
-    $("#12").fadeOut();
-  });
-});
-</script>
-
-<script>
-    $(document).ready(function(){
+            $("#11").fadeOut();
+            $("#12").fadeOut();
+            var delay=500
+    setTimeout(function(){
+    $("#1").fadeIn();
+    },delay)
+            
+        });
+        
         $("#21").click(function(){
-    $("#21").fadeOut();
-    $("#22").fadeOut();
-  });
-});
-</script>
-<script>
-    $(document).ready(function(){
+            $("#21").fadeOut();
+            $("#22").fadeOut();
+            var delay=500
+        setTimeout(function(){
+        $("#2").fadeIn();
+    },delay)
+        });
         $("#31").click(function(){
     $("#31").fadeOut();
     $("#32").fadeOut();
-  });
-});
-</script>
-<script>
-    $(document).ready(function(){
-        $("#41").click(function(){
+    var delay=500
+        setTimeout(function(){
+        $("#3").fadeIn();
+    },delay)
+    });
+    $("#41").click(function(){
     $("#41").fadeOut();
     $("#42").fadeOut();
-  });
-});
-</script>
-<script>
-    $(document).ready(function(){
-        $("#51").click(function(){
+    var delay=500
+        setTimeout(function(){
+        $("#4").fadeIn();
+    },delay)
+    });
+     $("#51").click(function(){
     $("#51").fadeOut();
     $("#52").fadeOut();
+    var delay=500
+        setTimeout(function(){
+        $("#5").fadeIn();
+    },delay)
+  
   });
-});
-</script>
-<script>
-    $(document).ready(function(){
-        $("#12").click(function(){
+     $("#12").click(function(){
     $("#11").fadeOut();
     $("#12").fadeOut();
+    var delay=500
+        setTimeout(function(){
+        $("#1").fadeIn();
+    },delay)
   });
-});
-</script>
-
-<script>
-    $(document).ready(function(){
-        $("#22").click(function(){
+     $("#22").click(function(){
     $("#21").fadeOut();
     $("#22").fadeOut();
+    var delay=500
+        setTimeout(function(){
+        $("#2").fadeIn();
+    },delay)
   });
-});
-</script>
-<script>
-    $(document).ready(function(){
-        $("#32").click(function(){
+     $("#32").click(function(){
     $("#31").fadeOut();
     $("#32").fadeOut();
+    var delay=500
+        setTimeout(function(){
+        $("#3").fadeIn();
+    },delay)
   });
-});
-</script>
-<script>
-    $(document).ready(function(){
-        $("#42").click(function(){
+     $("#42").click(function(){
     $("#41").fadeOut();
     $("#42").fadeOut();
+    var delay=500
+        setTimeout(function(){
+        $("#4").fadeIn();
+    },delay)
   });
-});
-</script>
-<script>
-    $(document).ready(function(){
-        $("#52").click(function(){
+     $("#52").click(function(){
     $("#51").fadeOut();
     $("#52").fadeOut();
+    var delay=500
+        setTimeout(function(){
+        $("#5").fadeIn();
+    },delay)
   });
-});
+
+});        
 </script>
 
 

@@ -3037,7 +3037,7 @@ input[type="button"].btn-block {
   content: "\e079";
 }
 
-.glyphicon-chevron-right:before {
+.glyphicon-chevron-up:before {
   content: "\e080";
 }
 
@@ -5300,6 +5300,7 @@ a.thumbnail.active {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
+  display: none;
 }
 
 .alert h4 {
@@ -6430,8 +6431,8 @@ button.close {
 
 .carousel-control .icon-prev,
 .carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-left,
-.carousel-control .glyphicon-chevron-right {
+.carousel-control .glyphicon-chevron-down,
+.carousel-control .glyphicon-chevron-up {
   position: absolute;
   top: 50%;
   z-index: 5;
@@ -6439,12 +6440,12 @@ button.close {
 }
 
 .carousel-control .icon-prev,
-.carousel-control .glyphicon-chevron-left {
+.carousel-control .glyphicon-chevron-down {
   left: 50%;
 }
 
 .carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-right {
+.carousel-control .glyphicon-chevron-up {
   right: 50%;
 }
 
@@ -6515,8 +6516,8 @@ button.close {
 }
 
 @media screen and (min-width: 768px) {
-  .carousel-control .glyphicons-chevron-left,
-  .carousel-control .glyphicons-chevron-right,
+  .carousel-control .glyphicons-chevron-down,
+  .carousel-control .glyphicons-chevron-up,
   .carousel-control .icon-prev,
   .carousel-control .icon-next {
     width: 30px;
@@ -7160,5 +7161,5 @@ td.visible-print {
 }.load:active {
   position:relative;
   top:1px;
+  location.reload();
 }
-
