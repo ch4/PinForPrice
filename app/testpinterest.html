@@ -2,13 +2,14 @@
 <html>
 <head>
     <title></title>
-    <script src="js/cryptojs/enc-base64-min.js"></script>
+    <!--<script src="js/cryptojs/enc-base64-min.js"></script>-->
     <script src="js/cryptojs/hmac-sha256.js"></script>
-    <script src="js/cryptojs/hmac-sha1.js"></script>
+    <!--<script src="js/cryptojs/hmac-sha1.js"></script>-->
     <script src="js/url.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript">
         var hash;
+        var response;
         function testOauth(){
             var date = (new Date()).getTime().toString()
             var params = "client_id=1435816&timestamp=" + date;
@@ -41,26 +42,27 @@
             $('#apiLink').attr('href',apiLink);
             $('#apiLink').show();
 
-            $.getJSON(
-                    apiLink,
-                    null,
-                    function(data){
-                        alert( data );
-                    }
-            );
-//            $.ajax({
-//                type: "GET",
-//                url: apiLink
-//            }).done(function( jsonResponse ) {
-//                alert( "Data Saved: " + msg );
-//            });
+//            $.getJSON(
+//                    apiLink,
+//                    null,
+//                    function(data){
+//                        alert( data );
+//                    }
+//            );
+            $.ajax({
+                //dataType: 'jsonp',
+                type: "GET",
+                url: apiLink
+            }).done(function( jsonResponse ) {
+                response = jsonResponse;
+            });
 
         }
     </script>
 </head>
 <body>
-    <input id="username" placeholder="Username">
-    <input id="boardname" placeholder="Boardname">
+http://www.pinterest.com/<input id="username" placeholder="nsputnik">/
+    <input id="boardname" placeholder="synths-and-studios">
     <button onclick="testOauth()">Test Oauth</button>
     <br /><br />
     <a style="display:none" id="apiLink" href="#">Link</a>
