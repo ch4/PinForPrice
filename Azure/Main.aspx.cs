@@ -8,8 +8,24 @@ using System.Security.Cryptography;
 using System.Text;
 using System.IO;
 using System.Net;
+using Newtonsoft.Json;
 
 public partial class Main : Page {
+    public List<PinterestItem> itemList = new List<PinterestItem>(5);
+
+    public class PinterestItem {
+        public string ImageURI { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Id { get; set; }
+        PinterestItem(string itemId = "", string itemname = "Unnamed Item", string itemdescription = "No description", string itemURL = "http://placehold.it/700x300") {
+            this.ImageURI = itemURL;
+            this.Name = itemname;
+            this.Description = itemdescription;
+            this.Id = itemId;
+        }
+    }
+
     public static string ByteArrayToString(byte[] ba) {
         StringBuilder hex = new StringBuilder(ba.Length * 2);
         foreach (byte b in ba)
@@ -79,6 +95,7 @@ public partial class Main : Page {
         Stream stream = webClient.OpenRead(apiLink);
         StreamReader reader = new StreamReader(stream);
         String response = reader.ReadToEnd();
+
 
     }
 
