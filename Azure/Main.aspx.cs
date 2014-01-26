@@ -111,7 +111,7 @@ public partial class Main : Page {
         }
 
         int count = 0;
-        pinforpricedbEntities1 dbentities = new pinforpricedbEntities1();
+        pinforpricedbEntities dbentities = new pinforpricedbEntities();
 
         // serialize JSON results into .NET objects
         foreach (JToken result in results) {

@@ -11,10 +11,10 @@ using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 
-public partial class pinforpricedbEntities1 : DbContext
+public partial class pinforpricedbEntities : DbContext
 {
-    public pinforpricedbEntities1()
-        : base("name=pinforpricedbEntities1")
+    public pinforpricedbEntities()
+        : base("name=pinforpricedbEntities")
     {
     }
 
@@ -23,5 +23,6 @@ public partial class pinforpricedbEntities1 : DbContext
         throw new UnintentionalCodeFirstException();
     }
 
+    public DbSet<pinboard> pinboards { get; set; }
     public DbSet<pinforpricedb> pinforpricedbs { get; set; }
 }

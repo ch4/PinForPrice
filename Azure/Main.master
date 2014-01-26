@@ -16,9 +16,14 @@
     <!-- Custom CSS for the 'Thumbnail Gallery' Template -->
     <link href="css/1-col-portfolio.css" rel="stylesheet">
 
+    <!-- JavaScript -->    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    <script src="js/bootstrap.js"></script>
+
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
 <body>
+
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -40,13 +45,19 @@
                     </li>
                     <li><a href="contact.html">Contact   <span class="glyphicon glyphicon-envelope"></span></a>
                     </li>
-                    <li><a href="#statistics">Statistics</a></li>
+                    <li><a href="#">Statistics</a></li>
+                    <li><a href="addboard.html">Add Your Pinboard</a></li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
+
+    
+
+
     <asp:ContentPlaceHolder runat="server" ID="MainContent" />
 </body>
 </html>

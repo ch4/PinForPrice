@@ -10,6 +10,13 @@
 using System;
 using System.Collections.Generic;
 
+public partial class pinboard
+{
+    public int ID { get; set; }
+    public string username { get; set; }
+    public string board { get; set; }
+}
+
 public partial class pinforpricedb
 {
     public int ID { get; set; }

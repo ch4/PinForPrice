@@ -6,8 +6,17 @@
     <edmx:StorageModels>
       <Schema Namespace="pinforpricedbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="pinforpricedbModelStoreContainer">
+          <EntitySet Name="pinboards" EntityType="pinforpricedbModel.Store.pinboards" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="pinforpricedb" EntityType="pinforpricedbModel.Store.pinforpricedb" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
+        <EntityType Name="pinboards">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="username" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="board" Type="nvarchar" Nullable="false" MaxLength="15" />
+        </EntityType>
         <EntityType Name="pinforpricedb">
           <Key>
             <PropertyRef Name="ID" />
@@ -23,9 +32,18 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="pinforpricedbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="pinforpricedbEntities1" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="pinforpricedbEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="pinboards" EntityType="pinforpricedbModel.pinboard" />
           <EntitySet Name="pinforpricedbs" EntityType="pinforpricedbModel.pinforpricedb" />
         </EntityContainer>
+        <EntityType Name="pinboard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="board" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+        </EntityType>
         <EntityType Name="pinforpricedb">
           <Key>
             <PropertyRef Name="ID" />
@@ -41,7 +59,16 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="pinforpricedbModelStoreContainer" CdmEntityContainer="pinforpricedbEntities1">
+        <EntityContainerMapping StorageEntityContainer="pinforpricedbModelStoreContainer" CdmEntityContainer="pinforpricedbEntities">
+          <EntitySetMapping Name="pinboards">
+            <EntityTypeMapping TypeName="pinforpricedbModel.pinboard">
+              <MappingFragment StoreEntitySet="pinboards">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="board" ColumnName="board" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="pinforpricedbs">
             <EntityTypeMapping TypeName="pinforpricedbModel.pinforpricedb">
               <MappingFragment StoreEntitySet="pinforpricedb">

@@ -11,9 +11,18 @@ public partial class DBProxy : System.Web.UI.Page
     {
         string id = Request.QueryString["id"];
         string vote = Request.QueryString["vote"];
-        pinforpricedbEntities1 dbentities = new pinforpricedbEntities1();
+        pinforpricedbEntities dbentities = new pinforpricedbEntities();
         
         var item = dbentities.pinforpricedbs.FirstOrDefault(pinforpricedb => pinforpricedb.Pinterest_ID == id);
+
+        if (Request.QueryString["username"] != null && Request.QueryString["boardname"] != null) {
+            pinboard newPinboard = new pinboard();
+            newPinboard.username = Request.QueryString["username"].Trim();
+            newPinboard.board = Request.QueryString["boardname"].Trim();
+            dbentities.pinboards.Add(newPinboard);
+            dbentities.SaveChanges();
+            return;
+        }
 
         if (vote != "high" && vote != "low") {
             //return the price

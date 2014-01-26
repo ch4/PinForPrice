@@ -6,13 +6,31 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>About</title>
+    <title>Add Board</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS for the 'Thumbnail Gallery' Template -->
     <link href="css/1-col-portfolio.css" rel="stylesheet">
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        function Add() {
+            var username = $('#username').val();
+            var boardname = $('#boardname').val();
+
+            if (username == "" || boardname == "") return;
+
+            $.ajax({
+                type: "GET",
+                url: "/DBProxy.aspx?username=" + username + "&boardname=" + boardname
+            });
+
+            window.location.assign("Main.aspx");
+        }
+    </script>
 
 </head>
 <body>
@@ -50,13 +68,15 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h1 class="page-header">About
-                    <small>Our information</small>
+                <h1 class="page-header">Add Your Pinboard
+                    <!--<small>Our information</small>-->
                 </h1>
             </div>
 			</div>
+        http://www.pinterest.com/<input id="username" placeholder="username">/
+    <input id="boardname" placeholder="boardname"><button onclick="Add()">Add</button>
         </div>
-      <p style = text-align: center>Why did we create this Pin For Price Website? Well Pinterest has always captured what people enjoy the most in their daily lives. Often times, these pins involve items that we typically see in our everyday lives but is it actually worth it to own those items? Pin For Price will exactly help you do make that decision. By collecting statistics of user's votes on various items and whether or not it is over priced or under priced, users can gain insight and opinion from the general consensus and make a final, well informed, decision in their purchases.</p>
+      
 </body>
 
 </html>

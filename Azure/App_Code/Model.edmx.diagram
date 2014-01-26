@@ -4,8 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7a6d078c0f8140d393645b90eebb735b" Name="Diagram1">
-        <EntityTypeShape EntityType="pinforpricedbModel.pinforpricedb" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="7f4e051557fe45e8adbaa70c075bc7a9" Name="Diagram1">
+        <EntityTypeShape EntityType="pinforpricedbModel.pinboard" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pinforpricedbModel.pinforpricedb" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
