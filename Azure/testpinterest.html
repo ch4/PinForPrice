@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!--<script src="js/cryptojs/enc-base64-min.js"></script>-->
+    <script src="js/cryptojs/hmac-sha256.js"></script>
+    <!--<script src="js/cryptojs/hmac-sha1.js"></script>-->
+    <script src="js/url.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        var hash;
+        var response;
+        function testOauth(){
+            var date = (new Date()).getTime().toString()
+            var params = "client_id=1435816&timestamp=" + date;
+            var username = $('#username').val() == "" ? "nsputnik" : $('#username').val();
+            var boardname = $('#boardname').val() == "" ? "synths-and-studios" : $('#boardname').val();
+
+            var hmacString = "GET&https%3A%2F%2Fapi.pinterest.com%2Fv3";
+            hmacString += "%2Fboards";
+            hmacString += "%2F" + username;
+            hmacString += "%2F" + boardname;
+            hmacString += "%2Fpins%2F";
+            hmacString += "&";
+            hmacString += params;
+            
+            var clientSecret = "eedca713dc5b13ef3572c55c50c135b159384894";
+            hash = CryptoJS.HmacSHA256(hmacString, clientSecret);
+//            var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, clientSecret);
+//            hmac.update(hmacString);
+//            var hash = hmac.finalize();
+
+            $('#hashOutput').text(hash);
+            $('#hashString').text(hmacString);
+
+            //https://api.pinterest.com/v3/boards/nsputnik/synths-and-studios/
+            // ?client_id=1435816&timestamp=1390694928470&oauth_signature=cccf9d745d9379021a9604c2208f3d5784bc3b44ea662c1dfbf7f110e5512352
+
+            var apiLink = "https://api.pinterest.com/v3/boards/" + username + "/" + boardname + "/pins/";
+            apiLink += "?" + params + "&oauth_signature=" + hash;
+
+            $('#apiLink').attr('href',apiLink);
+            $('#apiLink').show();
+
+//            $.getJSON(
+//                    apiLink,
+//                    null,
+//                    function(data){
+//                        alert( data );
+//                    }
+//            );
+            $.ajax({
+                //dataType: 'jsonp',
+                type: "GET",
+                url: apiLink
+            }).done(function( jsonResponse ) {
+                response = jsonResponse;
+            });
+
+        }
+    </script>
+</head>
+<body>
+http://www.pinterest.com/<input id="username" placeholder="nsputnik">/
+    <input id="boardname" placeholder="synths-and-studios">
+    <button onclick="testOauth()">Test Oauth</button>
+    <br /><br />
+    <a style="display:none" id="apiLink" href="#">Link</a>
+    <span id="hashString"></span>
+    <span id="hashOutput"></span>
+</body>
+</html>
