@@ -2007,9 +2007,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 }(jQuery);
 
 
-
-
-function remove1() {
+function remove12() {
     var elem = document.getElementById(11);
     var elem2 = document.getElementById(12);
     elem.parentNode.removeChild(elem);
@@ -2017,7 +2015,7 @@ function remove1() {
     return false;
 }
 
-function remove2() {
+function remove22() {
     var elem = document.getElementById(21);
     var elem2 = document.getElementById(22);
     elem.parentNode.removeChild(elem);
@@ -2025,7 +2023,7 @@ function remove2() {
     return false;
 }
 
-function remove3() {
+function remove32() {
     var elem = document.getElementById(31);
     var elem2 = document.getElementById(32);
     elem.parentNode.removeChild(elem);
@@ -2033,7 +2031,7 @@ function remove3() {
     return false;
 }
 
-function remove4() {
+function remove24() {
     var elem = document.getElementById(41);
     var elem2 = document.getElementById(42);
     elem.parentNode.removeChild(elem);
@@ -2041,7 +2039,7 @@ function remove4() {
     return false;
 }
 
-function remove5() {
+function remove52() {
     var elem = document.getElementById(51);
     var elem2 = document.getElementById(52);
     elem.parentNode.removeChild(elem);
