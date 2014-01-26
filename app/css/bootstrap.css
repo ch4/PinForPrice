@@ -7161,5 +7161,4 @@ td.visible-print {
 }.load:active {
   position:relative;
   top:1px;
-  location.reload();
-}
+ }
