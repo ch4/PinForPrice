@@ -40,7 +40,7 @@
                     </li>
                     <li><a href="contact.html">Contact   <span class="glyphicon glyphicon-envelope"></span></a>
                     </li>
-                    <li><a href="#statstics">Statistics</a></li>
+                    <li><a href="#statistics">Statistics</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
