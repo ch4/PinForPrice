@@ -32,8 +32,8 @@
                 <div id="1" class="alert alert-success">
               <strong>Thanks!</strong> Your opinion is greatly appreciated!
             </div>
-                <a class="btn btn-primary" id = "11" onclick="OverPriced(<asp:Literal runat="server" id="item0id1" />)">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
-                <a class="btn btn-primary" id = "12" onclick="UnderPriced(<asp:Literal runat="server" id="item0id2" />)">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
+                <a class="btn btn-primary" id = "11" onclick="OverPriced('<asp:Literal runat="server" id="item0id1" />')">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "12" onclick="UnderPriced('<asp:Literal runat="server" id="item0id2" />')">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
@@ -54,8 +54,8 @@
                  <div id="2" class="alert alert-success">
               <strong>Thanks!</strong> Your opinion is greatly appreciated!
             </div>
-                <a class="btn btn-primary" id = "21" onclick="OverPriced(<asp:Literal runat="server" id="item1id1" />)">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
-                <a class="btn btn-primary" id = "22" onclick="UnderPriced(<asp:Literal runat="server" id="item1id2" />)">Under Priced<span class="glyphicon glyphicon-chevron-down"></span></a>
+                <a class="btn btn-primary" id = "21" onclick="OverPriced('<asp:Literal runat="server" id="item1id1" />')">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "22" onclick="UnderPriced('<asp:Literal runat="server" id="item1id2" />')">Under Priced<span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
@@ -75,8 +75,8 @@
                 <div id="3" class="alert alert-success">
               <strong>Thanks!</strong> Your opinion is greatly appreciated!
             </div>
-                <a class="btn btn-primary" id = "31" onclick="OverPriced(<asp:Literal runat="server" id="item2id1" />)">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
-                <a class="btn btn-primary" id = "32" onclick="UnderPriced(<asp:Literal runat="server" id="item2id2" />)">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
+                <a class="btn btn-primary" id = "31" onclick="OverPriced('<asp:Literal runat="server" id="item2id1" />')">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "32" onclick="UnderPriced('<asp:Literal runat="server" id="item2id2" />')">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
@@ -101,8 +101,8 @@
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               <strong>Warning!</strong> Best check yo self, you're not looking too good.
             </div>
-                <a class="btn btn-primary" id = "41" onclick="OverPriced(<asp:Literal runat="server" id="item3id1" />)">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
-                <a class="btn btn-primary" id = "42" onclick="UnderPriced(<asp:Literal runat="server" id="item3id2" />)">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
+                <a class="btn btn-primary" id = "41" onclick="OverPriced('<asp:Literal runat="server" id="item3id1" />')">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "42" onclick="UnderPriced('<asp:Literal runat="server" id="item3id2" />')">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
