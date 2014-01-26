@@ -27,7 +27,7 @@
             </div>
 
             <div class="col-lg-5 col-md-5">
-                <h3>Project One</h3>
+                <h3 id="item-0-price">$0</h3>
                 <h4><asp:Literal runat="server" id="item0desc" /></h4>
                 <div id="1" class="alert alert-success">
               <strong>Thanks!</strong> Your opinion is greatly appreciated!
@@ -49,7 +49,7 @@
             </div>
 
             <div class="col-lg-5 col-md-5">
-                <h3>Project Two</h3>
+                <h3 id="item-1-price">$<asp:Literal runat="server" id="item1price" /></h3>
                 <h4><asp:Literal runat="server" id="item1desc" /></h4>
                  <div id="2" class="alert alert-success">
               <strong>Thanks!</strong> Your opinion is greatly appreciated!
@@ -70,7 +70,7 @@
                 </a>
             </div>
             <div class="col-lg-5 col-md-5">
-                <h3>Project Three</h3>
+                <h3 id="item-2-price">$<asp:Literal runat="server" id="item2price" /></h3>
                 <h4><asp:Literal runat="server" id="item2desc" /></h4>
                 <div id="3" class="alert alert-success">
               <strong>Thanks!</strong> Your opinion is greatly appreciated!
@@ -92,7 +92,7 @@
             </div>
 
             <div class="col-lg-5 col-md-5">
-                <h3>Project Four</h3>
+                <h3 id="item-3-price">$<asp:Literal runat="server" id="item3price" /></h3>
                 <h4><asp:Literal runat="server" id="item3desc" /></h4>
                  <div id="4" class="alert alert-success">
               <strong>Thanks!</strong> Your opinion is greatly appreciated!
@@ -130,21 +130,34 @@
     </div>
     <!-- /.container -->
 
-    <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <!-- JavaScript -->    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    <script src="js/bootstrap.js"></script>
+
 </script>
    <script>
        function OverPriced(itemId) {
-
+           $.ajax({
+               type: "GET",
+               url: "/DBProxy.aspx?id=" + itemId + "&vote=high"
+           });
        }
        function UnderPriced(itemId) {
-
+           $.ajax({
+               type: "GET",
+               url: "/DBProxy.aspx?id=" + itemId + "&vote=low"
+           });
        }
 
        $(document).ready(function () {
+           //get prices hack
+           $.ajax({
+               type: "GET",
+               url: "/DBProxy.aspx?id=" + "<asp:Literal runat="server" id="item0id3" />"
+           }).done(function (jsonResponse) {
+               $('#item-0-price').text("$"+jsonResponse);
+           });
+
            $("#11").click(function () {
                $("#11").fadeOut();
                $("#12").fadeOut();

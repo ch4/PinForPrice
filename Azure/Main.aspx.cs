@@ -111,13 +111,16 @@ public partial class Main : Page {
         }
 
         int count = 0;
+        pinforpricedbEntities1 dbentities = new pinforpricedbEntities1();
 
         // serialize JSON results into .NET objects
         foreach (JToken result in results) {
             string itemId = (string)result["id"];
+            var item = dbentities.pinforpricedbs.FirstOrDefault(pinforpricedb => pinforpricedb.Pinterest_ID == itemId);
             //string itemName = (string)responseObject["data"][0]["id"];
             string itemDesc = (string)result["description"];
             string itemPic = (string)result["image_large_url"];
+
             //if (itemList.Count > 4) {
             //    itemList[count] = new PinterestItem(itemId, itemDesc, itemPic);
             //} else {
@@ -133,24 +136,29 @@ public partial class Main : Page {
                     item0desc.Text = itemDesc;
                     item0id1.Text = itemId;
                     item0id2.Text = itemId;
+                    item0id3.Text = itemId;
+                    //item0price.Text = item == null ? "5" : item.Price.ToString();
                     break;
                 case 1:
                     item1pic.Text = itemPic;
                     item1desc.Text = itemDesc;
                     item1id1.Text = itemId;
                     item1id2.Text = itemId;
+                    item1price.Text = item == null ? "5" : item.Price.ToString();
                     break;
                 case 2:
                     item2pic.Text = itemPic;
                     item2desc.Text = itemDesc;
                     item2id1.Text = itemId;
                     item2id2.Text = itemId;
+                    item2price.Text = item == null ? "5" : item.Price.ToString();
                     break;
                 case 3:
                     item3pic.Text = itemPic;
                     item3desc.Text = itemDesc;
                     item3id1.Text = itemId;
                     item3id2.Text = itemId;
+                    item3price.Text = item == null ? "5" : item.Price.ToString();
                     break;
                 default:
                     break;
