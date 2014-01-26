@@ -9,22 +9,24 @@ using System.Text;
 using System.IO;
 using System.Net;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 public partial class Main : Page {
-    public List<PinterestItem> itemList = new List<PinterestItem>(5);
-
-    public class PinterestItem {
-        public string ImageURI { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Id { get; set; }
-        PinterestItem(string itemId = "", string itemname = "Unnamed Item", string itemdescription = "No description", string itemURL = "http://placehold.it/700x300") {
-            this.ImageURI = itemURL;
-            this.Name = itemname;
-            this.Description = itemdescription;
-            this.Id = itemId;
-        }
-    }
+    //public class PinterestItem {
+    //    public string ImageURI { get; set; }
+    //    //public string Name { get; set; }
+    //    public string Description { get; set; }
+    //    public string Id { get; set; }
+    //    //PinterestItem(string itemId = "", string itemname = "Unnamed Item", string itemdescription = "No description", string itemURL = "http://placehold.it/700x300") {
+    //    public PinterestItem(string itemId = "", string itemdescription = "No description", string itemURL = "http://placehold.it/700x300") {
+    //        this.ImageURI = itemURL;
+    //        //this.Name = itemname;
+    //        this.Description = itemdescription;
+    //        this.Id = itemId;
+    //    }
+    //}
+    //public List<PinterestItem> itemList = new List<PinterestItem>(4);
+    //public Literal[] literalPicList = {item0pic,item1pic,item2pic,item3pic};
 
     public static string ByteArrayToString(byte[] ba) {
         StringBuilder hex = new StringBuilder(ba.Length * 2);
@@ -94,12 +96,72 @@ public partial class Main : Page {
         WebClient webClient = new WebClient();
         Stream stream = webClient.OpenRead(apiLink);
         StreamReader reader = new StreamReader(stream);
-        String response = reader.ReadToEnd();
+        string response = reader.ReadToEnd();
 
+        JObject responseObject = JObject.Parse(response);
+        // get JSON result objects into a list
+        IList<JToken> allResults = responseObject["data"].Children().ToList();
 
+        List<JToken> results = new List<JToken>();
+        Random r = new Random();
+        for (int i = 0; i < 4; i++) {
+            var randomNum = r.Next(0, allResults.Count - 1);
+            results.Add(allResults[randomNum]);
+            allResults.RemoveAt(randomNum);
+        }
+
+        int count = 0;
+
+        // serialize JSON results into .NET objects
+        foreach (JToken result in results) {
+            string itemId = (string)result["id"];
+            //string itemName = (string)responseObject["data"][0]["id"];
+            string itemDesc = (string)result["description"];
+            string itemPic = (string)result["image_large_url"];
+            //if (itemList.Count > 4) {
+            //    itemList[count] = new PinterestItem(itemId, itemDesc, itemPic);
+            //} else {
+            //    itemList.Add(new PinterestItem(itemId, itemDesc, itemPic));
+            //}
+
+            //if(count ==0){
+            //item0pic,item1pic,item2pic,item3pic
+            //}
+            switch (count) {
+                case 0:
+                    item0pic.Text = itemPic;
+                    item0desc.Text = itemDesc;
+                    item0id1.Text = itemId;
+                    item0id2.Text = itemId;
+                    break;
+                case 1:
+                    item1pic.Text = itemPic;
+                    item1desc.Text = itemDesc;
+                    item1id1.Text = itemId;
+                    item1id2.Text = itemId;
+                    break;
+                case 2:
+                    item2pic.Text = itemPic;
+                    item2desc.Text = itemDesc;
+                    item2id1.Text = itemId;
+                    item2id2.Text = itemId;
+                    break;
+                case 3:
+                    item3pic.Text = itemPic;
+                    item3desc.Text = itemDesc;
+                    item3id1.Text = itemId;
+                    item3id2.Text = itemId;
+                    break;
+                default:
+                    break;
+            }
+
+            ++count;
+            if (count >= 4) break;
+        }
     }
 
-    public string GetImage(int number){
-        return "#";
-    }
+    //public String GetImage(int number){
+    //    return itemList[number].ImageURI;
+    //}
 }

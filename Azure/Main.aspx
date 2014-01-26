@@ -20,21 +20,20 @@
         </div>
 
         <div class="row">
-
             <div class="col-lg-7 col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="<%# Eval(GetImage(0))%>" alt="">
+                    <img class="img-responsive" src="<asp:Literal runat="server" id="item0pic" />" alt="">
                 </a>
             </div>
 
             <div class="col-lg-5 col-md-5">
                 <h3>Project One</h3>
-                <h4>Subheading</h4>
+                <h4><asp:Literal runat="server" id="item0desc" /></h4>
                 <div id="1" class="alert alert-success">
               <strong>Thanks!</strong> Your opinion is greatly appreciated!
             </div>
-                <a class="btn btn-primary" id = "11" >Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
-                <a class="btn btn-primary" id = "12" >Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
+                <a class="btn btn-primary" id = "11" onclick="OverPriced(<asp:Literal runat="server" id="item0id1" />)">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "12" onclick="UnderPriced(<asp:Literal runat="server" id="item0id2" />)">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
@@ -45,18 +44,18 @@
 
             <div class="col-lg-7 col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="<%# Eval(GetImage(1))%>" alt="">
+                    <img class="img-responsive" src="<asp:Literal runat="server" id="item1pic" />" alt="">
                 </a>
             </div>
 
             <div class="col-lg-5 col-md-5">
                 <h3>Project Two</h3>
-                <h4>Subheading</h4>
+                <h4><asp:Literal runat="server" id="item1desc" /></h4>
                  <div id="2" class="alert alert-success">
               <strong>Thanks!</strong> Your opinion is greatly appreciated!
             </div>
-                <a class="btn btn-primary" id = "21">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
-                <a class="btn btn-primary" id = "22">Under Priced<span class="glyphicon glyphicon-chevron-down"></span></a>
+                <a class="btn btn-primary" id = "21" onclick="OverPriced(<asp:Literal runat="server" id="item1id1" />)">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "22" onclick="UnderPriced(<asp:Literal runat="server" id="item1id2" />)">Under Priced<span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
@@ -67,17 +66,17 @@
 
             <div class="col-lg-7 col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="<%# Eval(GetImage(2))%>" alt="">
+                    <img class="img-responsive" src="<asp:Literal runat="server" id="item2pic" />" alt="">
                 </a>
             </div>
             <div class="col-lg-5 col-md-5">
                 <h3>Project Three</h3>
-                <h4>Subheading</h4>
+                <h4><asp:Literal runat="server" id="item2desc" /></h4>
                 <div id="3" class="alert alert-success">
               <strong>Thanks!</strong> Your opinion is greatly appreciated!
             </div>
-                <a class="btn btn-primary" id = "31">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
-                <a class="btn btn-primary" id = "32">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
+                <a class="btn btn-primary" id = "31" onclick="OverPriced(<asp:Literal runat="server" id="item2id1" />)">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "32" onclick="UnderPriced(<asp:Literal runat="server" id="item2id2" />)">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
@@ -88,13 +87,13 @@
 
             <div class="col-lg-7 col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="<%# Eval(GetImage(3))%>" alt="">
+                    <img class="img-responsive" src="<asp:Literal runat="server" id="item3pic" />" alt="">
                 </a>
             </div>
 
             <div class="col-lg-5 col-md-5">
                 <h3>Project Four</h3>
-                <h4>Subheading</h4>
+                <h4><asp:Literal runat="server" id="item3desc" /></h4>
                  <div id="4" class="alert alert-success">
               <strong>Thanks!</strong> Your opinion is greatly appreciated!
             </div>
@@ -102,30 +101,8 @@
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               <strong>Warning!</strong> Best check yo self, you're not looking too good.
             </div>
-                <a class="btn btn-primary" id = "41">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
-                <a class="btn btn-primary" id = "42">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
-            </div>
-
-        </div>
-
-        <hr>
-
-        <div class="row">
-
-            <div class="col-lg-7 col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="<%# Eval(GetImage(4))%>" alt="">
-                </a>
-            </div>
-
-            <div class="col-lg-5 col-md-5">
-                <h3>Project Five</h3>
-                <h4>Subheading</h4>
-                <div id="5" class="alert alert-success">
-              <strong>Thanks!</strong> Your opinion is greatly appreciated!
-            </div>
-                <a class="btn btn-primary" id = "51">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
-                <a class="btn btn-primary" id = "52">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
+                <a class="btn btn-primary" id = "41" onclick="OverPriced(<asp:Literal runat="server" id="item3id1" />)">Over Priced <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <a class="btn btn-primary" id = "42" onclick="UnderPriced(<asp:Literal runat="server" id="item3id2" />)">Under Priced <span class="glyphicon glyphicon-chevron-down"></span></a>
             </div>
 
         </div>
@@ -160,6 +137,13 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
    <script>
+       function OverPriced(itemId) {
+
+       }
+       function UnderPriced(itemId) {
+
+       }
+
        $(document).ready(function () {
            $("#11").click(function () {
                $("#11").fadeOut();
