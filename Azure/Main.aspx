@@ -23,7 +23,7 @@
 
             <div class="col-lg-7 col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="<%# Eval(GetImage(0))%>" alt="">
                 </a>
             </div>
 
@@ -45,7 +45,7 @@
 
             <div class="col-lg-7 col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="<%# Eval(GetImage(1))%>" alt="">
                 </a>
             </div>
 
@@ -67,7 +67,7 @@
 
             <div class="col-lg-7 col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="<%# Eval(GetImage(2))%>" alt="">
                 </a>
             </div>
             <div class="col-lg-5 col-md-5">
@@ -88,7 +88,7 @@
 
             <div class="col-lg-7 col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="<%# Eval(GetImage(3))%>" alt="">
                 </a>
             </div>
 
@@ -114,7 +114,7 @@
 
             <div class="col-lg-7 col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive" src="<%# Eval(GetImage(4))%>" alt="">
                 </a>
             </div>
 
